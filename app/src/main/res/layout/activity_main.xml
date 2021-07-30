@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layoutDirection="rtl"
     tools:context=".view.activity.MainActivity">
 
 
@@ -24,6 +25,10 @@
         android:background="@color/design_default_color_primary"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_menu"
+        app:itemIconSize="25dp"
+        app:itemIconTint="@color/white"
+        app:itemTextAppearanceActive="@style/font_aref"
+        app:itemTextAppearanceInactive="@style/font"
         app:itemTextColor="@color/white"/>
 
 </RelativeLayout>

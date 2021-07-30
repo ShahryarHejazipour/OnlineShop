@@ -5,22 +5,19 @@
 
         android:id="@+id/menu_shop_home"
         android:title="@string/shop"
-        android:iconTint="@color/white"
         android:icon="@drawable/ic_baseline_shopping_basket_24"/>
 
     <item
 
         android:id="@+id/menu_cart"
         android:title="@string/basket"
-        android:iconTint="@color/white"
         android:icon="@drawable/ic_baseline_shopping_cart_24"/>
 
     <item
 
         android:id="@+id/menu_profile"
         android:title="@string/profile"
-        android:iconTint="@color/white"
-        android:icon="@drawable/ic_baseline_person_pin_24"/>
+        android:icon="@drawable/ic_baseline_person_24"/>
 
 
 
