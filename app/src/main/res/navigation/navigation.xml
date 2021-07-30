@@ -10,4 +10,14 @@
         android:name="com.tispunshahryar960103.onlineshop.view.fragment.PostFragment"
         android:label="fragment_post"
         tools:layout="@layout/fragment_post" />
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.tispunshahryar960103.onlineshop.view.fragment.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.tispunshahryar960103.onlineshop.view.fragment.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
