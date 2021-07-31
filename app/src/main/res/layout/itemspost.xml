@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+        
+        <variable
+            name="post"
+            type="com.tispunshahryar960103.onlineshop.model.Model_Post" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/card_margin"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        android:layoutDirection="rtl">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_relative_layout_height">
+
+            <ImageView
+                android:id="@+id/im_post"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:image="@{post.imageurl}"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/image_margin_right"
+                android:padding="@dimen/image_item_padding" />
+
+            <TextView
+                android:id="@+id/txt_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/iransanse"
+                android:layout_marginTop="40dp"
+                android:text="@{post.title}"
+                android:layout_marginEnd="@dimen/image_margin_right"
+                android:textSize="@dimen/text_item_size"
+                android:layout_toEndOf="@id/im_post" />
+
+            <TextView
+                android:id="@+id/txt_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/iransanse"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="@dimen/image_margin_right"
+                android:textSize="@dimen/text_item_size"
+                android:layout_toEndOf="@id/im_post"
+                android:layout_below="@id/txt_title"
+
+                />
+
+            <TextView
+                android:id="@+id/txt_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/iransanse"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="@dimen/image_margin_right"
+                android:textSize="@dimen/text_item_size"
+                android:layout_toEndOf="@id/im_post"
+                android:layout_below="@id/txt_price"
+                android:text="@{post.date}"/>
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

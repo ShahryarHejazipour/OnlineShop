@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="bottom_nav_height">60dp</dimen>
+    <dimen name="card_margin">5dp</dimen>
+    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="item_relative_layout_height">200dp</dimen>
+    <dimen name="image_margin_right">20dp</dimen>
+    <dimen name="image_item_padding">10dp</dimen>
+    <dimen name="text_item_size">13sp</dimen>
 </resources>
