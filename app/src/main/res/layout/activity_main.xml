@@ -7,6 +7,25 @@
     android:layoutDirection="rtl"
     tools:context=".view.activity.MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@color/design_default_color_primary">
+
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:fontFamily="@font/iransanse"
+            android:textSize="@dimen/toolbar_txt_size"
+            android:text="@string/online_shop"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
 
     <fragment
         android:id="@+id/fragment"
@@ -15,7 +34,9 @@
         android:layout_height="match_parent"
         app:defaultNavHost="true"
         app:navGraph="@navigation/navigation"
-        android:layout_above="@id/bottom_Navigation"/>
+        android:layout_above="@id/bottom_Navigation"
+        android:layout_below="@id/toolbar"/>
+
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

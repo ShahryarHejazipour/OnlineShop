@@ -27,6 +27,8 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        supportActionBar?.hide()
+
 
         appBar = AppBarConfiguration.Builder(R.navigation.navigation).build()
 
@@ -44,9 +46,20 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
 
-            R.id.menu_shop_home -> navController.navigate(R.id.postFragment)
-            R.id.menu_profile -> navController.navigate(R.id.profileFragment)
-            R.id.menu_cart -> navController.navigate(R.id.cartFragment)
+            R.id.menu_shop_home -> {
+                navController.navigate(R.id.postFragment)
+            txt_title.text="فروشگاه"
+
+            }
+            R.id.menu_profile -> {
+                navController.navigate(R.id.profileFragment)
+            txt_title.text="پروفایل"
+            }
+            R.id.menu_cart -> {
+                navController.navigate(R.id.cartFragment)
+            txt_title.text="سبد خرید"
+
+            }
 
 
         }
