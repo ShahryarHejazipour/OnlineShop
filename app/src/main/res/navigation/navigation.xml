@@ -9,7 +9,11 @@
         android:id="@+id/postFragment"
         android:name="com.tispunshahryar960103.onlineshop.view.fragment.PostFragment"
         android:label="fragment_post"
-        tools:layout="@layout/fragment_post" />
+        tools:layout="@layout/fragment_post" >
+        <action
+            android:id="@+id/action_postFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/cartFragment"
         android:name="com.tispunshahryar960103.onlineshop.view.fragment.CartFragment"
@@ -20,4 +24,13 @@
         android:name="com.tispunshahryar960103.onlineshop.view.fragment.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.tispunshahryar960103.onlineshop.view.fragment.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <action
+            android:id="@+id/action_detailsFragment_to_postFragment"
+            app:destination="@id/postFragment" />
+    </fragment>
 </navigation>

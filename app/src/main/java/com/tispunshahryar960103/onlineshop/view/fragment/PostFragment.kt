@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.tispunshahryar960103.onlineshop.R
@@ -16,7 +17,7 @@ import com.tispunshahryar960103.onlineshop.viewModel.ViewModel_fragment_Post
 import kotlinx.android.synthetic.main.fragment_post.*
 
 
-class PostFragment : Fragment() {
+class PostFragment : Fragment(), Adapter_Post.ClickItems {
 
 
     override fun onCreateView(
@@ -41,7 +42,7 @@ class PostFragment : Fragment() {
 
                 it.layoutManager =
                     LinearLayoutManager(requireActivity(), RecyclerView.VERTICAL, false)
-                val adapter = Adapter_Post(itpost)
+                val adapter = Adapter_Post(itpost,this)
                 it.adapter = adapter
 
             }
@@ -51,6 +52,16 @@ class PostFragment : Fragment() {
 
 
         })
+
+
+    }
+
+    override fun itemID(id: String) {
+
+        val bundle= Bundle()
+        bundle.putString("idPost",id)
+        Navigation.findNavController(recyclerView).navigate(R.id.action_postFragment_to_detailsFragment,bundle)
+
 
 
     }

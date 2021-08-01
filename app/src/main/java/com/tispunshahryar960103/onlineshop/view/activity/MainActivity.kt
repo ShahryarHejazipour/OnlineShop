@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
         supportActionBar?.hide()
 
 
+
         appBar = AppBarConfiguration.Builder(R.navigation.navigation).build()
 
         navController = Navigation.findNavController(this, R.id.fragment)

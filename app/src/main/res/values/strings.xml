@@ -6,4 +6,5 @@
     <string name="profile">پروفایل</string>
     <string name="basket">سبد خرید</string>
     <string name="online_shop">فروشگاه اینترنتی</string>
+    <string name="add_to_basket">افزودن به سبد خرید</string>
 </resources>

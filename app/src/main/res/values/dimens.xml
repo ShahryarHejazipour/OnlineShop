@@ -9,4 +9,6 @@
     <dimen name="text_item_size">13sp</dimen>
     <dimen name="toolbar_height">56dp</dimen>
     <dimen name="toolbar_txt_size">25sp</dimen>
+    <dimen name="view_pager_height">200dp</dimen>
+    <dimen name="text_date_padding">5dp</dimen>
 </resources>

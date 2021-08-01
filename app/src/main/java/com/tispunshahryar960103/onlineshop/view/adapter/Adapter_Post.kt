@@ -1,16 +1,16 @@
 package com.tispunshahryar960103.onlineshop.view.adapter
 
 import android.view.LayoutInflater
-import android.view.View
+
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+
 import com.tispunshahryar960103.onlineshop.R
 import com.tispunshahryar960103.onlineshop.databinding.ItemspostBinding
 import com.tispunshahryar960103.onlineshop.model.Model_Post
 
-class Adapter_Post(val listpost: List<Model_Post>) :
+class Adapter_Post(val listpost: List<Model_Post>,val itemsClick:ClickItems) :
     RecyclerView.Adapter<Adapter_Post.viewHolder>() {
 
 
@@ -32,10 +32,12 @@ class Adapter_Post(val listpost: List<Model_Post>) :
 
         val modelPost: Model_Post = listpost[position]
         holder.binding.post = modelPost
+        holder.binding.txtPrice.text=modelPost.price + " تومان "    // holder.binding.txtPrice.setText(modelPost.price)
+        holder.itemView.setOnClickListener(){
+            itemsClick.itemID(modelPost.id)
+        }
 
-       // holder.binding.txtPrice.setText(modelPost.price)
-        holder.binding.txtPrice.text=modelPost.price + " تومان "
-       // Glide.get().
+
 
     }
 
@@ -45,8 +47,11 @@ class Adapter_Post(val listpost: List<Model_Post>) :
     }
 
 
-    class viewHolder(val binding: ItemspostBinding) : RecyclerView.ViewHolder(binding.root) {
+    interface ClickItems{
 
-
+        fun itemID(id:String)
     }
+
+
+    class viewHolder(val binding: ItemspostBinding) : RecyclerView.ViewHolder(binding.root)
 }
