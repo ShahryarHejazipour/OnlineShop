@@ -12,6 +12,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.tispunshahryar960103.onlineshop.R
 import com.tispunshahryar960103.onlineshop.databinding.FragmentDetailsBinding
 import com.tispunshahryar960103.onlineshop.model.Post
+import com.tispunshahryar960103.onlineshop.model.Slider
+import com.tispunshahryar960103.onlineshop.view.adapter.ViewPager_Adapter
 import com.tispunshahryar960103.onlineshop.viewModel.ViewModel_fragment_Details
 import kotlinx.android.synthetic.main.fragment_details.*
 
@@ -45,6 +47,8 @@ class DetailsFragment : Fragment() {
 
         viewModel.mutableLiveData.observe(requireActivity(), Observer {
 
+            viewPager(it.slider)
+
             val post = Post(
                 it.post[0].date,
                 it.post[0].des,
@@ -60,15 +64,16 @@ class DetailsFragment : Fragment() {
             btn_addCart.text = "افزودن به سبد خرید  " + post.price + "  تومان "
             btn_addCart.setOnClickListener{
 
-
-
-
             }
-
-
-
         })
 
+
+    }
+
+
+    fun viewPager(list:List<Slider>){
+
+        viewpager.adapter=ViewPager_Adapter(list)
 
     }
 

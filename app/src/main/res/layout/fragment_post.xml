@@ -1,36 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layoutDirection="rtl"
-    tools:context=".view.fragment.PostFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/toolbar_height"
-        android:background="@color/design_default_color_primary">
+    <data>
 
+    </data>
 
-        <TextView
-            android:id="@+id/txt_title"
-            android:textColor="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:fontFamily="@font/iransanse"
-            android:textSize="@dimen/toolbar_txt_size"
-            />
-
-    </androidx.appcompat.widget.Toolbar>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_below="@id/toolbar"
-        android:id="@+id/recyclerView"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        />
+        android:layoutDirection="rtl"
+        tools:context=".view.fragment.PostFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height"
+            android:background="@color/design_default_color_primary">
 
 
-</RelativeLayout>
+            <TextView
+                android:id="@+id/txt_title"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:fontFamily="@font/iransanse"
+                android:textSize="@dimen/toolbar_txt_size" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_below="@id/toolbar"
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </RelativeLayout>
+</layout>
