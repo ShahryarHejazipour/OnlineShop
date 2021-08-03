@@ -1,6 +1,7 @@
 package com.tispunshahryar960103.onlineshop.repository
 
 import com.tispunshahryar960103.onlineshop.model.Model_Post
+import com.tispunshahryar960103.onlineshop.model.Model_Status
 import com.tispunshahryar960103.onlineshop.model.Post
 import com.tispunshahryar960103.onlineshop.model.PostDetails
 import retrofit2.Response
@@ -20,6 +21,11 @@ interface Api {
     @FormUrlEncoded
     @POST("postdetails.php")
     suspend fun postdetailes(@Field("id")id:String):Response<PostDetails>
+
+    @FormUrlEncoded
+    @POST("login.php")
+    suspend fun postLogin(@Field("mobile")mobile:String,@Field("pass")pass:String):Response<Model_Status>
+
 
 
 
