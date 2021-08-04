@@ -1,6 +1,9 @@
 package com.tispunshahryar960103.onlineshop.viewModel
 
+import android.app.Application
 import android.view.View
+import android.widget.Toast
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tispunshahryar960103.onlineshop.model.Model_Post
@@ -11,7 +14,7 @@ import com.tispunshahryar960103.onlineshop.repository.Handle_Request
 import com.tispunshahryar960103.onlineshop.repository.ThreadMain
 import kotlinx.coroutines.Job
 
-class ViewModel_register: ViewModel() {
+class ViewModel_register(val app: Application): AndroidViewModel(app) {
 
 
     lateinit var job:Job
@@ -24,13 +27,33 @@ class ViewModel_register: ViewModel() {
     var name:String?=null
 
 
-    fun clickBtn_login(view:View){
+    fun ClickBtn_login(view:View){
 
-        job=ThreadMain.Coroutines_Handle({Handle_Request.response(Api.invoke().postLogin(mobile!!,pass!!))},{
-            mutableLiveData.value=it})
+        if (name.isNullOrEmpty()){
+
+            Toast.makeText(app.applicationContext, "نام کاربری نادرست است...", Toast.LENGTH_SHORT).show()
+
+        }else if (email.isNullOrEmpty()){
+            Toast.makeText(app.applicationContext, "ایمیل نادرست است...", Toast.LENGTH_SHORT).show()
+
+        }else if (mobile.isNullOrEmpty()){
+
+            Toast.makeText(app.applicationContext, "شماره ی موبایل نادرست است...", Toast.LENGTH_SHORT).show()
+
+        }else if (pass.isNullOrEmpty()){
+            Toast.makeText(app.applicationContext, "پسورد نادرست است...", Toast.LENGTH_SHORT).show()
+
+        }else{
+
+            job=ThreadMain.Coroutines_Handle({Handle_Request.response(Api.invoke().postRegister(name!!,mobile!!,email!!,pass!!))},{
+                mutableLiveData.value=it})
+
+        }
+
+
     }
 
-    fun clickBtn_intent_register(view:View){
+    fun ClickBtn_intent_register(view:View){
 
      mutable_check_intent.value=true
     }

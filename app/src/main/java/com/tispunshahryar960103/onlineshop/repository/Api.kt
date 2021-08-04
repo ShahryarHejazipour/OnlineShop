@@ -27,6 +27,15 @@ interface Api {
     suspend fun postLogin(@Field("mobile")mobile:String,@Field("pass")pass:String):Response<Model_Status>
 
 
+    @FormUrlEncoded
+    @POST("Reg.php")
+    suspend fun postRegister(@Field("name")name:String,
+                          @Field("mobile")mobile:String,
+                          @Field("email")email:String,
+                          @Field("pass")pass:String):Response<Model_Status>
+
+
+
 
 
     companion object{

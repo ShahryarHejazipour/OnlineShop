@@ -25,7 +25,7 @@ class ViewModel_login(val app:Application): AndroidViewModel(app) {
     var pass:String?=null
 
 
-    fun clickBtn_login(view:View){
+    fun ClickBtn_login(view:View){
 
         if (mobile.isNullOrEmpty()){
 
@@ -46,7 +46,7 @@ class ViewModel_login(val app:Application): AndroidViewModel(app) {
 
     }
 
-        fun clickBtn_intent_register(view:View){
+        fun ClickBtn_intent_register(view:View){
 
             mutable_check_intent.value=true
         }

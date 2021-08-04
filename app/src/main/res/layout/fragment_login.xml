@@ -6,7 +6,7 @@
 
         <variable
             name="data"
-            type="" />
+            type="com.tispunshahryar960103.onlineshop.viewModel.ViewModel_login" />
 
     </data>
 
