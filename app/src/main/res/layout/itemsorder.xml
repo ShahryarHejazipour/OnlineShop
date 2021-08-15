@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.tispunshahryar960103.onlineshop.model.Model_ListOrder" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="8dp"
+        android:layoutDirection="rtl"
+        app:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/iransanse"
+                    android:padding="10dp"
+                    android:text="   شماره سفارش :   ">
+
+                </TextView>
+
+                <TextView
+                    android:text="@{data.id}"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/iransanse"
+                    android:padding="10dp">
+
+                </TextView>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/iransanse"
+                    android:padding="10dp"
+                    android:text=" مجموع پرداخت  :  "
+                    android:textColor="@color/Green">
+
+                </TextView>
+
+                <TextView
+                    android:text="@{data.price}"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/iransanse"
+                    android:padding="10dp"
+                    android:textColor="@color/Green">
+
+                </TextView>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/Liner_success"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/Green"
+                android:orientation="vertical"
+                android:visibility="gone"
+              >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/iransanse"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="پرداخت موفق"
+                    android:textColor="@color/white">
+
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/Liner_notprice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/Read"
+                android:orientation="vertical"
+                android:visibility="gone"
+               >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/iransanse"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="پرداخت ناموفق"
+                    android:textColor="@color/white">
+
+                </TextView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

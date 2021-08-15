@@ -1,9 +1,6 @@
 package com.tispunshahryar960103.onlineshop.repository
 
-import com.tispunshahryar960103.onlineshop.model.Model_Post
-import com.tispunshahryar960103.onlineshop.model.Model_Status
-import com.tispunshahryar960103.onlineshop.model.Post
-import com.tispunshahryar960103.onlineshop.model.PostDetails
+import com.tispunshahryar960103.onlineshop.model.*
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -25,6 +22,17 @@ interface Api {
     @FormUrlEncoded
     @POST("login.php")
     suspend fun postLogin(@Field("mobile")mobile:String,@Field("pass")pass:String):Response<Model_Status>
+
+
+    @FormUrlEncoded
+    @POST("User_info.php")
+    suspend fun post_userInfo(@Field("user_id")userid:String):Response<List<Model_UserInfo>>
+
+
+    @FormUrlEncoded
+    @POST("list_order.php")
+    suspend fun post_ListOrder(@Field("user")user:String):Response<List<Model_ListOrder>>
+
 
 
     @FormUrlEncoded
