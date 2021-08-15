@@ -28,12 +28,15 @@ abstract class Repository {
       }
 
 
-      fun sharedRead(context:Context,userId:String):String{
+      fun sharedRead(context:Context):String{
 
           val sh = context.getSharedPreferences("token",0)
           var userId: String? =sh.getString("userId",null)
 
-          return userId!!
+          userId?.let {
+              return userId!!
+          }
+          return "Do not Find"
 
       }
   }

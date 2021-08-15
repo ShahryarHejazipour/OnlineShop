@@ -14,6 +14,7 @@ import androidx.navigation.ui.NavigationUI
 import com.google.android.material.navigation.NavigationBarView
 
 import com.tispunshahryar960103.onlineshop.R
+import com.tispunshahryar960103.onlineshop.repository.Repository
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -49,16 +50,34 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
 
             R.id.menu_shop_home -> {
                 navController.navigate(R.id.postFragment)
-            txt_title.text="فروشگاه"
+                txt_title.text = "فروشگاه"
 
             }
             R.id.menu_profile -> {
-                navController.navigate(R.id.profileFragment)
-            txt_title.text="پروفایل"
+
+
+                val userId = Repository.sharedRead(applicationContext)
+
+                if (userId.equals("Do not Find")){
+                    navController.navigate(R.id.loginFragment)
+                }else{
+                    navController.navigate(R.id.profileFragment)
+
+                }
+
             }
             R.id.menu_cart -> {
-                navController.navigate(R.id.cartFragment)
-            txt_title.text="سبد خرید"
+
+                val userId = Repository.sharedRead(applicationContext)
+
+                if (userId.equals("Do not Find")){
+                    navController.navigate(R.id.loginFragment)
+                }else{
+                    navController.navigate(R.id.cartFragment)
+
+                }
+
+                txt_title.text = "سبد خرید"
 
             }
 

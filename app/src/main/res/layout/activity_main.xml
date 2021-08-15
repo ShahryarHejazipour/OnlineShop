@@ -38,18 +38,17 @@
         android:layout_below="@id/toolbar"/>
 
 
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_Navigation"
         android:layout_width="match_parent"
         android:layout_height="@dimen/bottom_nav_height"
-        android:background="@color/design_default_color_primary"
         android:layout_alignParentBottom="true"
-        app:menu="@menu/bottom_menu"
+        android:background="@color/design_default_color_primary"
         app:itemIconSize="25dp"
         app:itemIconTint="@color/white"
         app:itemTextAppearanceActive="@style/font_aref"
         app:itemTextAppearanceInactive="@style/font"
-        app:itemTextColor="@color/white"/>
+        app:itemTextColor="@color/white"
+        app:menu="@menu/bottom_menu" />
 
 </RelativeLayout>

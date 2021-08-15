@@ -40,7 +40,7 @@ class PostFragment : Fragment(), Adapter_Post.ClickItems {
 
             binding = FragmentPostBinding.inflate(inflater, container, false)
 
-            var viewModel = ViewModelProvider(this).get(ViewModel_fragment_Post::class.java)
+            val viewModel = ViewModelProvider(this).get(ViewModel_fragment_Post::class.java)
             viewModel.listPost()
             viewModel.mutableLiveData.observe(requireActivity(), Observer { itpost ->
 
