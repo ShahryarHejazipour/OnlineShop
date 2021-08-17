@@ -34,6 +34,40 @@ interface Api {
     suspend fun post_ListOrder(@Field("user")user:String):Response<List<Model_ListOrder>>
 
 
+    @FormUrlEncoded
+    @POST("Get_record_cart.php")
+    suspend fun post_ListCart(@Field("user")user:String):Response<List<Model_ListCart>>
+
+
+    @FormUrlEncoded
+    @POST("Get_pricecart.php")
+    suspend fun post_Price_All(@Field("user")user:String):Response<Price>
+
+
+    @FormUrlEncoded
+    @POST("Addcart.php")
+    suspend fun Post_AddCart(@Field("product")product:String,@Field("user")user:String,@Field("count")count:String,@Field("check")check:String) : Response<Model_Addcart>
+
+
+
+/*
+    @FormUrlEncoded
+    @POST("Get_address.php")
+    suspend fun Post_Address(@Field("user")user:String) : Response<List<Model_Address>>
+*/
+
+  /*  @FormUrlEncoded
+    @POST("del_cart.php")
+    suspend fun Post_Del_Cart(@Field("idcart")idcart:String) : Response<Model_Del_cart>
+*/
+    /*@GET("pay.php")
+    suspend fun Listpay() : Response<List<Model_Pay>>
+*/
+    /*@FormUrlEncoded
+    @POST("Add_order.php")
+    suspend fun Post_Order(@Field("user")user:String,@Field("address")address:String) : Response<Model_Order>
+*/
+
 
     @FormUrlEncoded
     @POST("Reg.php")

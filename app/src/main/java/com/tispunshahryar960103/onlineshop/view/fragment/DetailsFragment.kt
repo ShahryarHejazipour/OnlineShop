@@ -13,13 +13,20 @@ import com.tispunshahryar960103.onlineshop.R
 import com.tispunshahryar960103.onlineshop.databinding.FragmentDetailsBinding
 import com.tispunshahryar960103.onlineshop.model.Post
 import com.tispunshahryar960103.onlineshop.model.Slider
+import com.tispunshahryar960103.onlineshop.repository.Api
+import com.tispunshahryar960103.onlineshop.repository.Handle_Request
+import com.tispunshahryar960103.onlineshop.repository.Repository
+import com.tispunshahryar960103.onlineshop.repository.ThreadMain
 import com.tispunshahryar960103.onlineshop.view.adapter.ViewPager_Adapter
 import com.tispunshahryar960103.onlineshop.viewModel.ViewModel_fragment_Details
 import kotlinx.android.synthetic.main.fragment_details.*
+import kotlinx.coroutines.Job
 
 class DetailsFragment : Fragment() {
 
     lateinit var binding: FragmentDetailsBinding
+
+    lateinit var job: Job
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +46,7 @@ class DetailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Log.e("TAG", "onViewCreated: "+ (arguments?.get("idPost") ?: "myMessage"))
+
 
         val viewModel =
             ViewModelProvider(requireActivity()).get(ViewModel_fragment_Details::class.java)
@@ -63,6 +71,20 @@ class DetailsFragment : Fragment() {
 
             btn_addCart.text = "افزودن به سبد خرید  " + post.price + "  تومان "
             btn_addCart.setOnClickListener{
+
+                val userId = Repository.sharedRead(requireActivity())
+                job = ThreadMain.Coroutines_Handle({
+                    Handle_Request.response(
+                        Api.invoke().Post_AddCart(post.id,userId,"1","add")
+                    )
+                },
+                    {
+
+
+
+                    })
+
+
 
             }
         })
